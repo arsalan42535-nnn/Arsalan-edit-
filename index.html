@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arsalan Ansari | Cinematic Editor</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Bebas+Neue&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#030303;color:#f0f0f0;font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#00f5ff,#0088ff)}
+
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:#030303}
+.hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,#00f5ff 0%,transparent 70%);filter:blur(150px);opacity:0.25;animation:float 10s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-40%,-60%) scale(1.1)}}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:7rem;letter-spacing:8px;background:linear-gradient(90deg,#fff,#00f5ff,#fff);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s linear infinite;z-index:2}
+@keyframes shine{0%{background-position:0%}100%{background-position:200%}}
+.hero p{font-size:1.1rem;letter-spacing:4px;color:#666;margin:25px 0;z-index:2;text-transform:uppercase}
+.btn{padding:16px 50px;border:2px solid #00f5ff;color:#00f5ff;background:transparent;text-decoration:none;font-weight:600;letter-spacing:2px;transition:0.4s;z-index:2;display:inline-block}
+.btn:hover{background:#00f5ff;color:#000;box-shadow:0 0 50px #00f5ff;transform:translateY(-3px)}
+.scroll-down{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-size:0.8rem;color:#444;letter-spacing:3px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+section{padding:120px 5%;max-width:1400px;margin:auto}
+h2{font-family:'Bebas Neue',sans-serif;font-size:4rem;letter-spacing:4px;margin-bottom:70px;text-align:center;color:#fff}
+
+.about-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:80px;align-items:center}
+.about-text p{font-size:1.15rem;line-height:2;color:#aaa;margin-bottom:25px}
+.about-img{position:relative}
+.about-img img{width:100%;height:500px;object-fit:cover;border:1px solid #1a1a1a}
+.about-img::after{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:1px solid #00f5ff;z-index:-1}
+
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.item{position:relative;overflow:hidden;border:1px solid #111;cursor:pointer}
+.item img{width:100%;height:380px;object-fit:cover;filter:grayscale(100%) brightness(0.7);transition:0.6s}
+.item:hover img{filter:grayscale(0%) brightness(1) scale(1.08)}
+.overlay{position:absolute;bottom:0;left:0;right:0;padding:30px;background:linear-gradient(transparent,rgba(0,0,0,0.9));transform:translateY(100%);transition:0.4s}
+.item:hover .overlay{transform:translateY(0)}
+.overlay h3{font-size:1.4rem;margin-bottom:8px;color:#00f5ff}
+.overlay p{font-size:0.9rem;color:#aaa}
+
+.skills-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.skill-box{text-align:center;padding:50px 20px;border:1px solid #1a1a1a;transition:0.4s}
+.skill-box:hover{border-color:#00f5ff;background:#0a0a0a}
+.skill-box h3{font-size:2.5rem;color:#00f5ff;margin-bottom:10px;font-family:'Bebas Neue'}
+
+.contact{text-align:center;border:1px solid #1a1a1a;padding:100px 50px;background:#0a0a0a}
+.contact p{font-size:1.3rem;color:#888;margin:20px 0}
+.contact a{color:#00f5ff;text-decoration:none;font-weight:600}
+
+footer{padding:50px;text-align:center;border-top:1px solid #111;color:#444;font-size:0.9rem;letter-spacing:2px}
+
+@media(max-width:1000px){
+.hero h1{font-size:4rem;letter-spacing:4px}
+.about-grid{grid-template-columns:1fr;gap:50px}
+.portfolio{grid-template-columns:1fr}
+.skills-wrap{grid-template-columns:repeat(2,1fr)}
+h2{font-size:2.5rem}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div>
+<h1>ARSALAN ANSARI</h1>
+<p>Cinematic Editor • Animation Artist • Reels Specialist</p>
+<p style="font-size:0.9rem;color:#444;margin-top:10px">Khaspur Tanda, Ambedkar Nagar, UP</p>
+<a href="#work" class="btn">View Work</a>
+</div>
+<div class="scroll-down">SCROLL DOWN</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="about-grid">
+<div class="about-text">
+<p>I'm Arsalan Ansari, a cinematic editor based in Ambedkar Nagar. I craft visual stories that hit different.</p>
+<p>Specializing in film-like color grading, smooth motion graphics, and viral short-form content. Every cut has purpose, every frame tells story.</p>
+<p>From brand films to Instagram reels - I bring cinematic quality to digital content. 3+ years experience, 200+ projects delivered.</p>
+</div>
+<div class="about-img">
+<img src="https://images.unsplash.com/photo-1492691524620-324ce7ceb353?w=900" alt="Editor Setup">
+</div>
+</div>
+</section>
+
+<section id="work">
+<h2>Selected Projects</h2>
+<div class="portfolio">
+<div class="item">
+<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800" alt="Cinematic">
+<div class="overlay">
+<h3>Cinematic Brand Film</h3>
+<p>Color grading + Slow motion storytelling</p>
+</div>
+</div>
+<div class="item">
+<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800" alt="Animation">
+<div class="overlay">
+<h3>3D Motion Graphics</h3>
+<p>After Effects + Blender animation</p>
+</div>
+</div>
+<div class="item">
+<img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800" alt="Reels">
+<div class="overlay">
+<h3>Viral Reels Edit</h3>
+<p>Hook-based editing for Instagram</p>
+</div>
+</div>
+<div class="item">
+<img src="https://images.unsplash.com/photo-1515630771457-09367d0ae038?w=800" alt="Travel">
+<div class="overlay">
+<h3>Travel Cinematic</h3>
+<p>Drone + B-roll montage</p>
+</div>
+</div>
+<div class="item">
+<img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800" alt="Motion">
+<div class="overlay">
+<h3>Logo Animation</h3>
+<p>Kinetic typography + Transitions</p>
+</div>
+</div>
+<div class="item">
+<img src="https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?w=800" alt="Ad">
+<div class="overlay">
+<h3>Ad Film Edit</h3>
+<p>Commercial editing for brands</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Skills</h2>
+<div class="skills-wrap">
+<div class="skill-box"><h3>3+</h3><p>Years Experience</p></div>
+<div class="skill-box"><h3>200+</h3><p>Projects Done</p></div>
+<div class="skill-box"><h3>Premiere</h3><p>Pro Expert</p></div>
+<div class="skill-box"><h3>After Effects</h3><p>VFX Master</p></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="contact">
+<h2>Let's Work Together</h2>
+<p>Got a project? Let's make it cinematic.</p>
+<p>📧 <a href="mailto:arsalan.editor@gmail.com">arsalan.editor@gmail.com</a></p>
+<p>📱 <a href="https://instagram.com/arsalan.cuts" target="_blank">@arsalan.cuts</a></p>
+<p>📍 Khaspur Tanda, Ambedkar Nagar, Uttar Pradesh</p>
+<a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn" style="margin-top:30px">Contact Now</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 ARSALAN ANSARI. ALL RIGHTS RESERVED. MADE IN AMBEDKAR NAGAR</p>
+</footer>
+
+</body>
+</html>
